@@ -206,7 +206,7 @@ void tessellate
 
     tess = gluNewTess();
     ctx = new_tess_context();
-
+    gluTessProperty(tess, GLU_TESS_WINDING_RULE, GLU_TESS_WINDING_NONZERO);
     gluTessCallback(tess, GLU_TESS_VERTEX_DATA,  (GLvoid (*) ()) &vertex);
     gluTessCallback(tess, GLU_TESS_BEGIN_DATA,   (GLvoid (*) ()) &begin);
     gluTessCallback(tess, GLU_TESS_COMBINE_DATA, (GLvoid (*) ()) &combine);
